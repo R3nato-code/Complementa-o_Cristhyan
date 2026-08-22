@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio | Cristhyan Daniel</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --cobre: #b87333;
+            --dourado: #d4af37;
+            --fundo-escuro: #1a140e;
+            --fundo-card: #2c1f10;
+            --texto-claro: #e8d5b7;
+            --texto-dourado: #f0d060;
+            --fonte-titulo: 'Cinzel', serif;
+            --fonte-corpo: 'Crimson Text', serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--fonte-corpo);
+            background-color: var(--fundo-escuro);
+            color: var(--texto-claro);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        .navbar {
+            background-color: #1f180e;
+            border-bottom: 2px solid var(--dourado);
+            padding: 8px 0;
+            z-index: 1000;
+        }
+
+        .navbar.scrolled {
+            background-color: #150f08;
+        }
+
+        .navbar-brand {
+            font-family: var(--fonte-titulo);
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--dourado) !important;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            color: #f5e56c !important;
+        }
+
+        .navbar-brand i {
+            font-size: 1.8rem;
+            color: var(--cobre);
+        }
+
+        .nav-link {
+            font-family: var(--fonte-titulo);
+            color: #c0a878 !important;
+            font-weight: 500;
+            font-size: 0.9rem;
+            margin: 0 3px;
+            padding: 8px 16px !important;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: 1px solid transparent;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--dourado) !important;
+            background-color: rgba(184,115,51,0.2);
+            border-color: var(--cobre);
+        }
+
+        .navbar-toggler {
+            border: 2px solid var(--cobre);
+            padding: 6px 10px;
+            border-radius: 4px;
+            background-color: rgba(184,115,51,0.1);
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(212,175,55,0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #2a1f14;
+            padding-top: 80px;
+        }
+
+        #hero h1 {
+            font-family: var(--fonte-titulo);
+            font-weight: 900;
+            font-size: clamp(2.5rem, 6vw, 4.2rem);
+            letter-spacing: 2px;
+            line-height: 1.3;
+            color: var(--texto-dourado);
+        }
+
+        .typing-text {
+            background: linear-gradient(180deg, #f0d060, #d4af37, #b8960f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            border-right: 3px solid var(--dourado);
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+            animation: blinkCursor 0.8s infinite;
+        }
+
+        @keyframes blinkCursor {
+            0%,100% { border-color: transparent; }
+            50% { border-color: var(--dourado); }
+        }
+
+        #hero .lead {
+            font-size: clamp(1rem, 2.2vw, 1.3rem);
+            font-weight: 400;
+            color: #d5c0a0;
+            margin-top: 15px;
+            font-style: italic;
+        }
+
+        .btn-steampunk {
+            font-family: var(--fonte-titulo);
+            background-color: #b07a30;
+            border: 2px solid var(--dourado);
+            color: #1a1008;
+            padding: 14px 32px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .btn-steampunk:hover {
+            background-color: #c08a40;
+            color: #0d0804;
+        }
+
+        .btn-outline-steampunk {
+            font-family: var(--fonte-titulo);
+            background: transparent;
+            border: 2px solid var(--dourado);
+            color: var(--dourado);
+            padding: 14px 32px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .btn-outline-steampunk:hover {
+            background-color: rgba(184,115,51,0.15);
+            border-color: #f0d060;
+            color: #f0d060;
+        }
+
+        .hero-img-wrapper {
+            display: inline-block;
+        }
+
+        .hero-img-wrapper img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 50%;
+            border: 3px solid var(--cobre);
+            transition: border-color 0.4s ease;
+            filter: sepia(0.3) contrast(1.1);
+        }
+
+        .hero-img-wrapper img:hover {
+            border-color: var(--dourado);
+        }
+
+        section {
+            padding: 90px 0;
+        }
+
+        .section-title {
+            font-family: var(--fonte-titulo);
+            font-weight: 800;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            margin-bottom: 20px;
+            color: var(--dourado);
+            text-align: center;
+            letter-spacing: 3px;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            margin: 8px auto 0;
+            width: 80px;
+            height: 3px;
+            background-color: var(--dourado);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #b8a080;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .divider {
+            width: 100px;
+            height: 2px;
+            background-color: var(--cobre);
+            margin: 0 auto 50px;
+            opacity: 0.6;
+        }
+
+        .custom-card {
+            background-color: var(--fundo-card);
+            border: 2px solid var(--cobre);
+            border-radius: 4px;
+            padding: 35px 25px;
+            transition: all 0.3s ease;
+            height: 100%;
+            text-align: center;
+        }
+
+        .custom-card:hover {
+            border-color: var(--dourado);
+        }
+
+        .custom-card i {
+            font-size: 3rem;
+            color: var(--dourado);
+            margin-bottom: 20px;
+        }
+
+        .custom-card h3 {
+            font-family: var(--fonte-titulo);
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            color: var(--texto-dourado);
+            letter-spacing: 1px;
+        }
+
+        .custom-card p {
+            color: #c0a878;
+            font-size: 1rem;
+            font-style: italic;
+        }
+
+        .projeto-card {
+            background-color: var(--fundo-card);
+            border: 2px solid var(--cobre);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .projeto-card:hover {
+            border-color: var(--dourado);
+        }
+
+        .projeto-card .card-img-top {
+            height: 200px;
+            background-color: #3a2a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--dourado);
+            border-bottom: 2px solid var(--cobre);
+        }
+
+        .projeto-card .card-body {
+            padding: 25px 22px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .projeto-card .card-title {
+            font-family: var(--fonte-titulo);
+            font-weight: 700;
+            color: var(--texto-dourado);
+            letter-spacing: 1px;
+            font-size: 1.3rem;
+        }
+
+        .projeto-card .card-text {
+            color: #c0a878;
+            font-style: italic;
+        }
+
+        .badge-tech {
+            background-color: rgba(184,115,51,0.25);
+            color: var(--dourado);
+            font-family: var(--fonte-titulo);
+            font-weight: 600;
+            font-size: 0.75rem;
+            padding: 6px 14px;
+            border-radius: 2px;
+            margin-right: 6px;
+            margin-bottom: 6px;
+            border: 1px solid var(--cobre);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .btn-sm {
+            border-radius: 2px;
+            padding: 10px 24px;
+            font-family: var(--fonte-titulo);
+            font-weight: 700;
+            font-size: 0.85rem;
+            background-color: #b07a30;
+            border: 1px solid var(--dourado);
+            color: #1a1008;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-sm:hover {
+            background-color: #c08a40;
+            color: #0d0804;
+        }
+
+        .skill-bar-wrapper {
+            margin-bottom: 28px;
+        }
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-family: var(--fonte-titulo);
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #d5c0a0;
+            font-size: 0.9rem;
+        }
+        .progress {
+            height: 14px;
+            background-color: #1f150a;
+            border-radius: 2px;
+            overflow: hidden;
+            border: 1px solid var(--cobre);
+        }
+        .progress-bar {
+            background-color: var(--dourado);
+            border-radius: 2px;
+            transition: width 1.5s ease;
+            width: 0%;
+        }
+
+        #contato .form-control {
+            background-color: #2c1f10;
+            border: 2px solid var(--cobre);
+            border-radius: 2px;
+            padding: 14px 18px;
+            color: #e8d5b7;
+            font-family: var(--fonte-corpo);
+            transition: all 0.3s ease;
+        }
+        #contato .form-control:focus {
+            border-color: var(--dourado);
+            background-color: #3a2a1a;
+        }
+        #contato .form-control::placeholder {
+            color: #8a7a60;
+        }
+
+        .btn-submit {
+            font-family: var(--fonte-titulo);
+            background-color: #b07a30;
+            border: 2px solid var(--dourado);
+            padding: 14px 40px;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #1a1008;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        .btn-submit:hover {
+            background-color: #c08a40;
+        }
+
+        .contato-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 18px 22px;
+            background-color: var(--fundo-card);
+            border: 2px solid var(--cobre);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: #c0a878;
+            margin-bottom: 15px;
+        }
+        .contato-item:hover {
+            border-color: var(--dourado);
+            color: var(--texto-dourado);
+        }
+        .contato-item i {
+            font-size: 2rem;
+            color: var(--dourado);
+        }
+
+        footer {
+            background-color: #1a1008;
+            border-top: 3px double var(--dourado);
+            padding: 40px 0 30px;
+            text-align: center;
+        }
+        footer .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(184,115,51,0.2);
+            color: var(--dourado);
+            font-size: 1.4rem;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--cobre);
+            text-decoration: none;
+        }
+        footer .social-icons a:hover {
+            background-color: #b07a30;
+            color: #1a1008;
+            border-color: var(--dourado);
+        }
+        .footer-text span {
+            background: linear-gradient(180deg, #f0d060, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            font-family: var(--fonte-titulo);
+            letter-spacing: 1px;
+        }
+
+        .scroll-top-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #b07a30;
+            border: 2px solid var(--dourado);
+            color: #1a1008;
+            font-size: 1.4rem;
+            cursor: pointer;
+            z-index: 999;
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .scroll-top-btn.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        .scroll-top-btn:hover {
+            background-color: #c08a40;
+        }
+
+        @media (max-width: 768px) {
+            .hero-img-wrapper img {
+                max-width: 200px;
+            }
+            section {
+                padding: 60px 0;
+            }
+        }
+       /* Animações de entrada */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Efeito hover de levantamento nos cards */
+.custom-card, .projeto-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.custom-card:hover, .projeto-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#hero">
+                <i class="bi bi-gear-fill"></i> Cristhyan Daniel
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#hero">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#formacao">Formação</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <h1 class="text-white mb-2">
+                        Olá, eu sou<br>
+                        <span class="typing-text" id="typingName"></span>
+                    </h1>
+                    <p class="lead">
+                        Sou Cristhyan Daniel, estudante do Colégio Estadual Presidente Kennedy, tenho 16 anos e curso DS (desenvolvimento de sistemas).
+                    </p>
+                    <div class="d-flex gap-3 flex-wrap mt-4">
+                        <a href="#projetos" class="btn-steampunk"><i class="bi bi-gear-fill"></i> Projetos</a>
+                        <a href="#contato" class="btn-outline-steampunk"><i class="bi bi-chat-dots-fill"></i> Contato</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 text-center">
+                    <div class="hero-img-wrapper">
+                        <img src="https://ui-avatars.com/api/?name=Cristhyan+Daniel&background=b87333&color=fff&size=400" alt="Avatar de Cristhyan Daniel" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre">
+        <div class="container">
+            <h2 class="section-title">Sobre Mim</h2>
+            <p class="section-subtitle">Um pouco da minha jornada</p>
+            <div class="divider"></div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="custom-card">
+                        <i class="bi bi-lightbulb-fill"></i>
+                        <h3>Criatividade</h3>
+                        <p>Gosto de criar soluções criativas e funcionais para cada desafio que encontro.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="custom-card">
+                        <i class="bi bi-tools"></i>
+                        <h3>Conhecimento Técnico</h3>
+                        <p>Trabalho com HTML, CSS, JavaScript e Python, construindo projetos com dedicação.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="custom-card">
+                        <i class="bi bi-compass"></i>
+                        <h3>Determinação</h3>
+                        <p>Meu objetivo é crescer na área de desenvolvimento de software e fazer a diferença.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="formacao" style="background-color: #1a140e;">
+        <div class="container">
+            <h2 class="section-title">Formação</h2>
+            <p class="section-subtitle">Minha trajetória acadêmica</p>
+            <div class="divider"></div>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="custom-card text-start">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <i class="bi bi-building-fill" style="font-size: 2.5rem;"></i>
+                            <h3 class="mb-0" style="color:#f0d060; font-family:var(--fonte-titulo);">Colégio Estadual Presidente Kennedy</h3>
+                        </div>
+                        <p style="color:#c0a878;">Curso Técnico em Desenvolvimento de Sistemas (DS) — Integrado ao Ensino Médio.</p>
+                        <p style="color:#c0a878;"><i class="bi bi-calendar-check me-2"></i>Início: 2025 • Previsão de conclusão: 2027</p>
+                        <p style="color:#c0a878;">Disciplinas: Lógica de Programação, Banco de Dados, Desenvolvimento Web, Algoritmos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="habilidades">
+        <div class="container">
+            <h2 class="section-title">Habilidades Técnicas</h2>
+            <p class="section-subtitle">Minhas competências</p>
+            <div class="divider"></div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-info"><span><i class="bi bi-filetype-html me-2" style="color:#e34c26;"></i>HTML5</span><span>90%</span></div>
+                        <div class="progress"><div class="progress-bar" data-width="90%"></div></div>
+                    </div>
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-info"><span><i class="bi bi-filetype-css me-2" style="color:#264de4;"></i>CSS3</span><span>85%</span></div>
+                        <div class="progress"><div class="progress-bar" data-width="85%"></div></div>
+                    </div>
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-info"><span><i class="bi bi-filetype-js me-2" style="color:#f0db4f;"></i>JavaScript</span><span>70%</span></div>
+                        <div class="progress"><div class="progress-bar" data-width="70%"></div></div>
+                    </div>
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-info"><span><i class="bi bi-filetype-py me-2" style="color:#306998;"></i>Python</span><span>65%</span></div>
+                        <div class="progress"><div class="progress-bar" data-width="65%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projetos" style="background-color: #1a140e;">
+        <div class="container">
+            <h2 class="section-title">Projetos Recentes</h2>
+            <p class="section-subtitle">Trabalhos desenvolvidos</p>
+            <div class="divider"></div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-5">
+                    <div class="projeto-card">
+                        <div class="card-img-top">
+                            <i class="bi bi-calculator-fill"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Calculadora Python</h5>
+                            <p class="card-text">Calculadora de terminal desenvolvida em Python com operações aritméticas completas, tratamento de erros e interface amigável.</p>
+                            <div>
+                                <span class="badge-tech">Python</span>
+                                <span class="badge-tech">CLI</span>
+                                <span class="badge-tech">Lógica</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-5">
+                    <div class="projeto-card">
+                        <div class="card-img-top">
+                            <i class="bi bi-dice-6-fill"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Jogo da Cobrinha</h5>
+                            <p class="card-text">Clássico Snake Game recriado com Python e Pygame, com sistema de pontuação, níveis de dificuldade e design retrô.</p>
+                            <div>
+                                <span class="badge-tech">Python</span>
+                                <span class="badge-tech">Pygame</span>
+                                <span class="badge-tech">Game</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <p class="section-subtitle">Fale comigo</p>
+            <div class="divider"></div>
+            <div class="row g-5">
+                <div class="col-lg-6">
+                    <form id="contactForm">
+                        <input type="text" class="form-control mb-3" placeholder="Seu nome" id="nome" required>
+                        <input type="email" class="form-control mb-3" placeholder="seu@email.com" id="email" required>
+                        <textarea class="form-control mb-3" rows="5" placeholder="Sua mensagem..." id="mensagem" required></textarea>
+                        <button type="submit" class="btn-submit"><i class="bi bi-send-fill"></i> Enviar</button>
+                        <div id="formFeedback" class="mt-3 text-center fw-bold" style="display:none;"></div>
+                    </form>
+                </div>
+                <div class="col-lg-5 offset-lg-1">
+                    <a href="https://wa.me/5541999114555" target="_blank" class="contato-item">
+                        <i class="bi bi-whatsapp"></i> <span>99911-4555</span>
+                    </a>
+                    <a href="tel:+5541999114555" class="contato-item">
+                        <i class="bi bi-telephone-fill"></i> <span>99911-4555</span>
+                    </a>
+                    <a href="mailto:Cristhyan.schoenk@escola.pr.gov.br" class="contato-item">
+                        <i class="bi bi-envelope-fill"></i> <span>Cristhyan.schoenk@escola.pr.gov.br</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="social-icons">
+                <a href="https://wa.me/5541999114555" target="_blank"><i class="bi bi-whatsapp"></i></a>
+                <a href="tel:+5541999114555"><i class="bi bi-telephone-fill"></i></a>
+                <a href="mailto:Cristhyan.schoenk@escola.pr.gov.br"><i class="bi bi-envelope-fill"></i></a>
+            </div>
+            <p class="footer-text mb-0" style="color:#b8a080;">
+                &copy; 2026 <span>Cristhyan Daniel</span> • Todos os direitos reservados • Desenvolvimento web
+            </p>
+        </div>
+    </footer>
+
+    <button class="scroll-top-btn" id="scrollTopBtn"><i class="bi bi-chevron-up"></i></button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Array de palavras a serem digitadas
+const words = ["Cristhyan Daniel", "Desenvolvedor", "Estudante DS"];
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const typingEl = document.getElementById('typingName');
+
+function typeLoop() {
+    const currentWord = words[wordIndex];
+    if (isDeleting) {
+        typingEl.textContent = currentWord.substring(0, charIndex - 1);
+        charIndex--;
+    } else {
+        typingEl.textContent = currentWord.substring(0, charIndex + 1);
+        charIndex++;
+    }
+
+    // Mantém a classe do cursor piscante
+    typingEl.classList.add('typing-text');
+
+    let speed = isDeleting ? 60 : 120;
+
+    if (!isDeleting && charIndex === currentWord.length) {
+        // Pequena pausa antes de apagar
+        speed = 2000;
+        isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        speed = 500; // pausa antes da próxima palavra
+    }
+
+    setTimeout(typeLoop, speed);
+}
+
+// Inicia quando a página estiver pronta
+document.addEventListener('DOMContentLoaded', () => {
+    typingEl.textContent = '';
+    typeLoop();
+});
+            typingEl.textContent = '';
+            typeWriter();
+
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 60));
+
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(s => { if (window.scrollY >= s.offsetTop - 150) current = s.getAttribute('id'); });
+            navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
+        });
+
+        const scrollBtn = document.getElementById('scrollTopBtn');
+        window.addEventListener('scroll', () => scrollBtn.classList.toggle('visible', window.scrollY > 600));
+        scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+fecha
+        const bsCollapse = new bootstrap.Collapse(document.getElementById('navbarNav'), { toggle: false });
+        navLinks.forEach(l => l.addEventListener('click', () => {
+            if (document.getElementById('navbarNav').classList.contains('show')) bsCollapse.hide();
+        }));
+
+        function animateBars() {
+            const bars = document.querySelectorAll('.progress-bar');
+            const section = document.getElementById('habilidades');
+            if (section.getBoundingClientRect().top < window.innerHeight - 100) {
+                bars.forEach(b => b.style.width = b.getAttribute('data-width'));
+                window.removeEventListener('scroll', animateBars);
+            }
+        }
+        window.addEventListener('scroll', animateBars);
+        animateBars();
+
+        const form = document.getElementById('contactForm');
+        const feedback = document.getElementById('formFeedback');
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            const nome = document.getElementById('nome').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const msg = document.getElementById('mensagem').value.trim();
+            if (!nome || !email || !msg) {
+                feedback.style.display = 'block';
+                feedback.style.color = '#f87171';
+                feedback.textContent = 'Preencha todos os campos.';
+                return;
+            }
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                feedback.style.display = 'block';
+                feedback.style.color = '#f87171';
+                feedback.textContent = 'E-mail inválido.';
+                return;
+            }
+            feedback.style.display = 'block';
+            feedback.style.color = '#86efac';
+            feedback.textContent = 'Mensagem enviada com sucesso!';
+            form.reset();
+            setTimeout(() => feedback.style.display = 'none', 4000);
+        });
+    </script>
+</body>
+</html>
