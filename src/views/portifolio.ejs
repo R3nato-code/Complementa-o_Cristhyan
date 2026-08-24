@@ -546,7 +546,7 @@
     <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
         <div class="container">
             <a class="navbar-brand" href="#hero">
-                <i class="bi bi-gear-fill"></i> Cristhyan Daniel
+                <i class="bi bi-gear-fill"></i> <%=perfil.nomeCompleto%>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -573,7 +573,7 @@
                         <span class="typing-text" id="typingName"></span>
                     </h1>
                     <p class="lead">
-                        Sou Cristhyan Daniel, estudante do Colégio Estadual Presidente Kennedy, tenho 16 anos e curso DS (desenvolvimento de sistemas).
+                        Sou Cristhyan Daniel, estudante do <%=perfil.escola%> tenho <%=perfil.idade%> anos e <%=perfil.curso%>.
                     </p>
                     <div class="d-flex gap-3 flex-wrap mt-4">
                         <a href="#projetos" class="btn-steampunk"><i class="bi bi-gear-fill"></i> Projetos</a>
@@ -649,7 +649,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="skill-bar-wrapper">
-                        <div class="skill-info"><span><i class="bi bi-filetype-html me-2" style="color:#e34c26;"></i>HTML5</span><span>90%</span></div>
+                        <div class="skill-info"><span><i class="bi bi-filetype-html me-2" style="color:#e34c26;"></i><HTML5></span><span>90%</span></div>
                         <div class="progress"><div class="progress-bar" data-width="90%"></div></div>
                     </div>
                     <div class="skill-bar-wrapper">
@@ -728,13 +728,13 @@
                 </div>
                 <div class="col-lg-5 offset-lg-1">
                     <a href="https://wa.me/5541999114555" target="_blank" class="contato-item">
-                        <i class="bi bi-whatsapp"></i> <span>99911-4555</span>
+                        <i class="bi bi-whatsapp"></i> <span><%=contato.whatsapp%></span>
                     </a>
                     <a href="tel:+5541999114555" class="contato-item">
-                        <i class="bi bi-telephone-fill"></i> <span>99911-4555</span>
+                        <i class="bi bi-telephone-fill"></i> <span><%=contato.telefone%></span>
                     </a>
                     <a href="mailto:Cristhyan.schoenk@escola.pr.gov.br" class="contato-item">
-                        <i class="bi bi-envelope-fill"></i> <span>Cristhyan.schoenk@escola.pr.gov.br</span>
+                        <i class="bi bi-envelope-fill"></i> <span><%=contato.email%></span>
                     </a>
                 </div>
             </div>
